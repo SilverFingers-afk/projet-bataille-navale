@@ -2,11 +2,7 @@
 Utilisateur : un joueur
 Story : On veut pouvoir gérer les tirs de l'adversaire
 Actions :
-
-afficher la grille à l'écran
-demande à l'utilisateur de rentrer deux coordonnées x et y
-tier à l'endroit indiqué sur la grille
-retour en 2"""
+"""
 
 """créer une grille à 5 lignes et 8 colonnes"""
 nb_coups = 0
