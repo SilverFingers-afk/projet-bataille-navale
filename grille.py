@@ -1,7 +1,5 @@
 class Grille:
     """Ggrille sur laquelle sont positionnés les bateaux et les tirs"""
-    matrice = []
-    nombre_colonnes = 0
 
     def __init__(self, nombre_lignes, nombre_colonnes):
         self.matrice = [["~" for _ in range(nombre_colonnes)] for _ in range(nombre_lignes)]
