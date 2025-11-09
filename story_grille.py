@@ -13,8 +13,11 @@ while nb_coups != nb_max:
 
     coordonnees = input("Choisez une coordonnée pour le tir (chiffres séparés d'un espace)")
     
-    if 0 < ord(coordonnees[0])-64 < 9 and  0 < (int(coordonnees[2])) < 6 :
-        grille.tirer(int(coordonnees[2]), ord(coordonnees[0])-64 )
-        nb_coups+=1
-    else:
-        print("Erreur : coordonnées non valides")
+    try:
+        if 0 < ord(coordonnees[0])-64 < 9 and  0 < (int(coordonnees[2])) < 6 :
+            grille.tirer(int(coordonnees[2]), ord(coordonnees[0])-64 )
+            nb_coups+=1
+        else:
+            print("Erreur : coordonnées non valides")
+    except Exception as e:
+        print("Erreur : Frappe invalide")
