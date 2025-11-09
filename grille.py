@@ -8,10 +8,11 @@ class Grille:
         self.nombre_colonnes = nombre_colonnes
         self.nombre_lignes = nombre_lignes
 
-    def afficher(self):
-        print(f"  {' '.join([chr(65+i) for i in range(self.nombre_colonnes)])}")
+    def __str__(self):
+        result = "  " + " ".join(chr(65 + i) for i in range(self.nombre_colonnes)) + "\n"
         for i, ligne in enumerate(self.matrice):
-            print(f"{i+1} {' '.join(ligne)}")
+            result += f"{i+1} {' '.join(ligne)}\n"
+        return result
 
     def tirer(self, x, y):
         self.matrice[x-1][y-1] = 'x'

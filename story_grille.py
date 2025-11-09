@@ -9,9 +9,9 @@ nb_coups = 0
 nb_max = 30
 
 while nb_coups != nb_max:
-    print(grille)
+    print(grille(5))
 
-    coordonnees = input("Choisez une coordonnée pour le tir")
+    coordonnees = input("Choisez une coordonnée pour le tir (chiffres séparés d'un espace)")
 
     if True:
         """Tire à l'endroit et change d'icône selon raté ou touché"""
