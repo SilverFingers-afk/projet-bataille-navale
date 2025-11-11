@@ -1,4 +1,3 @@
-from bateau import Bateau
 class Grille:
     """Ggrille sur laquelle sont positionnés les bateaux et les tirs"""
 
@@ -13,10 +12,12 @@ class Grille:
             result += f"{i+1} {' '.join(ligne)}\n"
         return result
 
-    def tirer(self, x, y):
-        self.matrice[x-1][y-1] = 'x'
+    def tirer(self, x, y, touche='x'):
+        self.matrice[x-1][y-1] = touche
 
+    
     def ajoute(self, bateau):
+        from bateau import Bateau
         try:
             for e in bateau.positions:
                 if e[0] < 0 or e[0] >= len(self.matrice) or e[1] < 0 or e[1] >= len(self.matrice[0]):

@@ -6,6 +6,7 @@ def test_init():
   try:
     print("Test réussi : un objet Grille a été créé avec succès.")
     grille.tirer(3, 3)
+    grille.tirer(3, 4, "O")
     print(grille)
   except Exception as e:
     print(f"Test échoué : {e}")
