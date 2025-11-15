@@ -1,10 +1,14 @@
-"""Nom : "Plouf dans l'eau"
-Utilisateur : un joueur
-Story : On veut pouvoir gérer les tirs de l'adversaire
-Actions :
-"""
 from grille import Grille
-grille = Grille(5, 8)
+from bateau import PorteAvion
+from bateau import Torpilleur
+from bateau import Croiseur
+from bateau import SousMarin
+
+grille = Grille(8, 10)
+grille.placer_bateau_aleatoire(PorteAvion)
+grille.placer_bateau_aleatoire(Torpilleur)
+grille.placer_bateau_aleatoire(Croiseur)
+grille.placer_bateau_aleatoire(SousMarin)
 nb_coups = 0
 nb_max = 30
 
@@ -22,3 +26,4 @@ while nb_coups != nb_max:
             print("Erreur : coordonnées non valides")
     except Exception:
         print("Erreur : Frappe invalide")
+print("Nombre de coups : " + nb_coups)

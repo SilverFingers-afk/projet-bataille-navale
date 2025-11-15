@@ -1,3 +1,6 @@
+import random
+
+
 class Grille:
     """Ggrille sur laquelle sont positionnés les bateaux et les tirs"""
 
@@ -21,7 +24,7 @@ class Grille:
     def ajoute(self, bateau):
         try:
             for e in bateau.positions:
-                if ([0] < 0
+                if (e[0] < 0
                         or e[0] >= len(self.matrice)
                         or e[1] < 0
                         or e[1] >= len(self.matrice[0])):
@@ -35,19 +38,23 @@ class Grille:
         """Vérifie que toutes les cases du bateau
         sont dans la grille et libres."""
         for x, y in bateau.positions:
-            if x < 0 or x >= self.taille or y < 0 or y >= self.taille:
+            if (x < 0
+                    or x >= self.nombre_lignes
+                    or y < 0
+                    or y >= self.nombre_colonnes):
                 return False
             if self.matrice[x][y] != "~":
                 return False
         return True
 
-    def placer_bateau_aleatoire(self, classe_bateau, taille):
+    def placer_bateau_aleatoire(self, classe_bateau):
         """Calcule toutes les positions possibles puis choisit au hasard."""
         solutions = []
-
-        for x in range(self.taille):
-            for y in range(self.taille):
+        for x in range(self.nombre_lignes):
+            for y in range(self.nombre_colonnes):
                 for horizontal in [True, False]:
                     b = classe_bateau(x, y, horizontal)  # création temporaire
                     if self.peut_placer(b):
                         solutions.append(b)
+        choix = random.choice(solutions)
+        self.ajoute(choix)
