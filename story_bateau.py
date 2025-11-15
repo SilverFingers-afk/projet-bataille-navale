@@ -5,10 +5,17 @@ Story : Positionner des bateaux sans chevauchement
 
 from grille import Grille
 from bateau import Bateau
-b1 = Bateau(2, 2, 3, True)
+from bateau import PorteAvion
+from bateau import Torpilleur
+from bateau import Croiseur
+from bateau import SousMarin
+porteavion = PorteAvion(2, 2, False)
+torpilleur = Torpilleur(3, 5, False)
+croiseur = Croiseur(4, 1, False)
+sousmarin = SousMarin(0, 0, True)
 b2 = Bateau(2, 3, 3, False)
 b3 = Bateau(1, 0, longueur=3, vertical=False)
-grille = Grille(2,3)
+grille = Grille(5,8)
 def chevauchement(bat1, bat2):
   for e1 in bat1.positions:
     for e2 in bat2.positions:
@@ -16,7 +23,10 @@ def chevauchement(bat1, bat2):
         return False
   return True
 
-grille.ajoute(b3)
+grille.ajoute(porteavion)
+grille.ajoute(torpilleur)
+grille.ajoute(croiseur)
+grille.ajoute(sousmarin)
 print(grille)
 print(b3.coulé(grille))
 for e in b3.positions:

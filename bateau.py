@@ -21,3 +21,18 @@ class Bateau:
         return False
     return True
   
+class PorteAvion(Bateau):
+  def __init__(self, x, y, vertical = False):
+    super().__init__(x, y, 4, vertical)
+
+class Croiseur(Bateau):
+  def __init__(self, x, y, vertical = False):
+    super().__init__(x, y, 3, vertical)
+
+class Torpilleur(Bateau):
+  def __init__(self, x, y, vertical = False):
+    super().__init__(x, y, 2, vertical)
+
+class SousMarin(Bateau):
+  def __init__(self, x, y, vertical = False):
+    super().__init__(x, y, 2, vertical)
