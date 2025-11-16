@@ -18,10 +18,10 @@ while True:
     coordonnees = input("Choisez une coordonnée pour le tir "
                         "(Lettre majuscule puis chiffres séparés d'un espace)")
     try:
-        if 0 < ord(coordonnees[0])-64 < 11 and 0 < (int(coordonnees[2])) < 9:
-            if g.matrice[int(coordonnees[2])-1][ord(coordonnees[0])-65] == "⛵":
-                grille.tirer(int(coordonnees[2])-1,
-                             ord(coordonnees[0])-65,
+        if 0 < ord(coordonnees[0]) - 64 < 11 and 0 < (int(coordonnees[2])) < 9:
+            if g.matrice[int(coordonnees[2]) - 1][ord(coordonnees[0]) - 65] == "⛵":
+                grille.tirer(int(coordonnees[2]) - 1,
+                             ord(coordonnees[0]) - 65,
                              "💣")
                 nouvelle_liste = []
                 for b in bateaux:
@@ -32,7 +32,7 @@ while True:
                         nouvelle_liste.append(b)
                 bateaux = nouvelle_liste
             else:
-                grille.tirer(int(coordonnees[2])-1, ord(coordonnees[0])-65)
+                grille.tirer(int(coordonnees[2]) - 1, ord(coordonnees[0]) - 65)
             nb_coups += 1
             if bateaux == []:
                 break

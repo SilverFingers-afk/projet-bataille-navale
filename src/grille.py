@@ -11,11 +11,9 @@ class Grille:
         self.nombre_lignes = nombre_lignes
 
     def __str__(self):
-        result = ("  " +
-                  " ".join(chr(65 + i) for i in range(self.nombre_colonnes)) +
-                  "\n")
+        result = ("  " + " ".join(chr(65 + i) for i in range(self.nombre_colonnes)) + "\n")
         for i, ligne in enumerate(self.matrice):
-            result += f"{i+1} {' '.join(ligne)}\n"
+            result += f"{i + 1} {' '.join(ligne)}\n"
         return result
 
     def tirer(self, x, y, touche='x'):
