@@ -25,7 +25,7 @@ def chevauchent(b1, b2):
 print("=== User Story : Chevauchement ===")
 
 # --- Cas 1 : bateaux qui se chevauchent ---
-b1 = Bateau(0, 0, 3, True) 
+b1 = Bateau(0, 0, 3, True)
 b2 = Bateau(0, 1, 3, True)
 
 print("\nCas 1 : chevauchement attendu")
