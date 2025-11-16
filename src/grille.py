@@ -21,7 +21,7 @@ class Grille:
     def tirer(self, x, y, touche='x'):
         self.matrice[x-1][y-1] = touche
 
-    def ajoute(self, bateau):
+    def ajoute(self, bateau, icone="⛵"):
         pos = []
         try:
             for e in bateau.positions:
@@ -31,7 +31,7 @@ class Grille:
                         or e[1] >= len(self.matrice[0])):
                     raise ValueError("Position hors matrice")
             for e in bateau.positions:
-                self.matrice[e[0]][e[1]] = "⛵"
+                self.matrice[e[0]][e[1]] = icone
                 pos.append(self.matrice[e[0]][e[1]])
             return pos
         except Exception:
@@ -61,6 +61,7 @@ class Grille:
                         solutions.append(b)
         choix = random.choice(solutions)
         self.ajoute(choix)
+        return choix
 
     def bateaux(self):
         """Trouve la position des bateaux"""
