@@ -9,14 +9,6 @@ Vérifier si les deux bateaux se chevauchent"""
 from bateau import Bateau
 
 
-def chevauchement(bat1, bat2):
-    for e1 in bat1.positions:
-        for e2 in bat2.positions:
-            if e1 == e2:
-                return False
-    return True
-
-
 def chevauchent(b1, b2):
     """Retourne True si au moins une position est commune."""
     return any(pos in b2.positions for pos in b1.positions)

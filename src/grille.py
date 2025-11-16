@@ -2,7 +2,7 @@ import random
 
 
 class Grille:
-    """Ggrille sur laquelle sont positionnés les bateaux et les tirs"""
+    """Grille sur laquelle sont positionnés les bateaux et les tirs"""
 
     def __init__(self, nombre_lignes, nombre_colonnes):
         self.matrice = [["~" for _ in range(nombre_colonnes)]
@@ -19,9 +19,12 @@ class Grille:
         return result
 
     def tirer(self, x, y, touche='x'):
-        self.matrice[x-1][y-1] = touche
+        """Place le signe "x" par défaut sur la
+        grille aux coordonnées choisies"""
+        self.matrice[x][y] = touche
 
     def ajoute(self, bateau, icone="⛵"):
+        """Place le bateau choisi sur la grille avec l'icône "⛵" par défaut"""
         pos = []
         try:
             for e in bateau.positions:
@@ -56,7 +59,7 @@ class Grille:
         for x in range(self.nombre_lignes):
             for y in range(self.nombre_colonnes):
                 for horizontal in [True, False]:
-                    b = classe_bateau(x, y, horizontal)  # création temporaire
+                    b = classe_bateau(x, y, horizontal)
                     if self.peut_placer(b):
                         solutions.append(b)
         choix = random.choice(solutions)
