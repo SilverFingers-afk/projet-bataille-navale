@@ -14,10 +14,10 @@ class Bateau:
         """Retourne les positions de chaque point du bateau sur la grille"""
         if not self.vertical:
             return [(self.ligne, i) for i in range(self.colonne,
-                                                   self.colonne+self.longueur)]
+                                                   self.colonne + self.longueur)]
         else:
             return [(i, self.colonne) for i in range(self.ligne,
-                                                     self.ligne+self.longueur)]
+                                                     self.ligne + self.longueur)]
 
     def coule(self, grille):
         """Vérifie si tous les éléments du bateau
